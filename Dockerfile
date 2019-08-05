@@ -10,9 +10,6 @@ RUN apk add --no-cache rsync clamav-daemon clamav-libunrar && \
 COPY src /usr/local/bin
 WORKDIR /var/lib/clamav
 USER clamav:clamav
-# creating a minimal database so daemon can start right away
-RUN echo "48c4533230e1ae1c118c741c0db19dfb:17387:test.exe" > firststart.hdb
-
 EXPOSE 3310/tcp
 VOLUME /var/lib/clamav /run/clamav
 

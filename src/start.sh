@@ -42,6 +42,8 @@ done
 ) &
 BACKGROUND_TASKS="${BACKGROUND_TASKS} $!"
 
+# creating a minimal database so daemon can start
+echo "48c4533230e1ae1c118c741c0db19dfb:17387:test.exe" > /var/lib/clamav/firststart.hdb
 nice -n10 clamd &
 BACKGROUND_TASKS="${BACKGROUND_TASKS} $!"
 
