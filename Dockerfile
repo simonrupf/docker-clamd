@@ -1,5 +1,5 @@
 FROM alpine:3.10
-RUN apk add --no-cache rsync clamav-daemon clamav-libunrar && \
+RUN apk add --no-cache rsync clamav-daemon clamav-libunrar tzdata && \
     sed -i '/LogFile/s/^/#/' /etc/clamav/*.conf && \
     sed -i '/^#LogSyslog/s/^#//' /etc/clamav/*.conf && \
     sed -i '/^#TCPSocket/s/^#//' /etc/clamav/clamd.conf && \
