@@ -3,6 +3,12 @@
 An antivirus container image, based on alpine, running the clamav daemon for use
 via TCP port, i.e. in mail servers.
 
+## Software stack
+
+- clamd and freshclam are written in C.
+- rsync is used for signature updates.
+- busybox /bin/sh shell is used for service checks and update scheduling.
+
 ## Environment variables
 
 - `TZ`: timezone used for logging, defaults to UTC

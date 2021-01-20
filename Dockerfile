@@ -1,4 +1,4 @@
-FROM alpine:3.12
+FROM alpine:3.13
 RUN apk upgrade --no-cache && \
     apk add --no-cache rsync clamav-daemon clamav-libunrar tzdata && \
     sed -i '/LogFile/s/^/#/' /etc/clamav/*.conf && \
