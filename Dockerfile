@@ -1,6 +1,9 @@
 FROM alpine:3.17
 RUN apk upgrade --no-cache && \
     apk add --no-cache rsync clamav-daemon clamav-libunrar tzdata && \
+    sed -i '/^LogFile/s/^/#/;/^#LogSyslog/s/^#//' /etc/clamav/*.conf && \
+    sed -i '/^#TCPSocket/s/^#//;/^#Foreground/s/^#//;/^#ConcurrentDatabaseReload/s/^#//' \
+        /etc/clamav/clamd.conf && \
     sed -i '/LogFile/s/^/#/' /etc/clamav/*.conf && \
     sed -i '/^#LogSyslog/s/^#//' /etc/clamav/*.conf && \
     sed -i '/^#TCPSocket/s/^#//' /etc/clamav/clamd.conf && \

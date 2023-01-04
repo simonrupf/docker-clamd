@@ -1,5 +1,9 @@
 # clamd change log
 
+## 0.3.0
+disable ConcurrentDatabaseReload, conserving memory during updates, restoring
+pre-0.103.0 behavior, see https://blog.clamav.net/2020/09/clamav-01030-released.html
+
 ## 0.2.9
 update to Alpine 3.17 / clamd 0.105.1
 
