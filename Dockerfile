@@ -9,7 +9,8 @@ RUN apk upgrade --no-cache && \
     sed -i '/^#TCPSocket/s/^#//' /etc/clamav/clamd.conf && \
     sed -i '/^#Foreground/s/^#//' /etc/clamav/clamd.conf && \
     mkdir -p /run/clamav && \
-    chown clamav:clamav /run/clamav
+    chown clamav:clamav /run/clamav && \
+    rm /usr/bin/clamdscan /usr/bin/openssl
 
 COPY src /usr/local/bin
 WORKDIR /var/lib/clamav

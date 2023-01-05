@@ -1,6 +1,6 @@
 .PHONY: all build run debug clean
 
-NAME = clamd
+NAME = clamav
 IMAGE = simonrupf/$(NAME)
 
 all: build run

@@ -1,5 +1,8 @@
 # clamd change log
 
+## 0.4.0
+removed clamdscan & openssl, which are not used by the daemon
+
 ## 0.3.0
 disable ConcurrentDatabaseReload, conserving memory during updates, restoring
 pre-0.103.0 behavior, see https://blog.clamav.net/2020/09/clamav-01030-released.html
