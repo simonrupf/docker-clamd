@@ -1,4 +1,9 @@
-FROM alpine:3.17
+FROM alpine:3.18
+
+LABEL org.opencontainers.image.authors="Simon Rupf <simon@rupf.net>" \
+      org.opencontainers.image.source=https://github.com/simonrupf/docker-clamd \
+      org.opencontainers.image.version="${VERSION}"
+
 RUN apk upgrade --no-cache && \
     apk add --no-cache rsync clamav-daemon clamav-libunrar tzdata && \
     sed -i '/^LogFile/s/^/#/;/^#LogSyslog/s/^#//' /etc/clamav/*.conf && \
@@ -10,7 +15,7 @@ RUN apk upgrade --no-cache && \
     sed -i '/^#Foreground/s/^#//' /etc/clamav/clamd.conf && \
     mkdir -p /run/clamav && \
     chown clamav:clamav /run/clamav && \
-    rm /usr/bin/clamdscan /usr/bin/openssl
+    rm /usr/bin/clamdscan
 
 COPY src /usr/local/bin
 WORKDIR /var/lib/clamav

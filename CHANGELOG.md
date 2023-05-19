@@ -1,5 +1,8 @@
 # clamd change log
 
+## 0.4.1
+update to Alpine 3.18 / clamd 1.1.0
+
 ## 0.4.0
 removed clamdscan & openssl, which are not used by the daemon
 
