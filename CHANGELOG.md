@@ -1,5 +1,8 @@
 # clamd change log
 
+## 0.4.4
+update to clamd 1.2.2
+
 ## 0.4.3
 update to Alpine 3.19 / clamd 1.2.1
 
@@ -51,4 +54,3 @@ moving first start database creation into startup script
 
 ## 0.1.0
 initial packaging, based on mailu alpine image with mailcow shell task manager
-
