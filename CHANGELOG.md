@@ -1,5 +1,8 @@
 # clamd change log
 
+## 0.4.7
+update to Alpine 3.22 / clamd 1.4.2
+
 ## 0.4.6
 update to Alpine 3.21 / clamd 1.4.1
 
